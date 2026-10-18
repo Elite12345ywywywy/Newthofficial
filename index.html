@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from cortexpanels.site/Elite/ by HTTrack Website Copier/3.x [XR&CO'2017], Tue, 06 Jan 2026 20:44:24 GMT -->
+
+<!-- Mirrored from elite12345ywywywy.github.io/newyear26/ by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 15 Oct 2026 07:35:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME PREDICTION SYSTEM - New Year</title>
+    <link href="../../external.html?link=https://elite12345ywywywy.github.io/external.html?link=https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Orbitron:wght@500;600;700;800&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.html">
+    <style>
+        :root {
+            --diwali-gold: #39FF88;
+            --diwali-orange: #00C978;
+            --diwali-red: #00E5A8;
+            --diwali-yellow: #B9FFD7;
+            --diwali-bg: #06130D;
+            --diwali-card: rgba(57, 255, 136, 0.1);
+            --text-gold: #39FF88;
+            --text-light: #B9FFD7;
+            --success: #4caf50;
+            --error: #f44336;
+            --warning: #ff9800;
+            --hot: #ff3d00;
+            --whatsapp: #25D366;
+            --instagram: #E1306C;
+            --premium: #ffcc00;
+            --register: #9c27b0;
+            --telegram: #0088cc;
+            --support: #6a11cb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--diwali-bg);
+            color: var(--text-gold);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            /* Performance improvements */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Simplified Background Elements for Performance */
+        .diwali-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(57, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 201, 120, 0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(57, 255, 136, 0.15), rgba(0, 201, 120, 0.1));
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(57, 255, 136, 0.2),
+                inset 0 0 20px rgba(57, 255, 136, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(57, 255, 136, 0.1), transparent);
+            animation: headerShine 3s infinite;
+        }
+
+        @keyframes headerShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .title {
+            display: none;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            opacity: 0.9;
+            font-size: 0.9rem;
+            font-family: 'Share Tech Mono', monospace;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* Status Bar */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 15px;
+            background: rgba(26, 15, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(57, 255, 136, 0.3);
+        }
+
+        .status-items {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        .online { background-color: var(--success); }
+        .offline { background-color: var(--error); }
+        .syncing { background-color: var(--warning); }
+
+        .current-time {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: var(--diwali-orange);
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn-container {
+            text-align: center;
+            margin: 20px auto 30px;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .whatsapp-tag {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5);
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(57, 255, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #06130D;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(57, 255, 136, 0.5);
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.2rem;
+        }
+
+        /* Buttons */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: #06130D;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            padding: 10px 20px;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            padding: 10px 20px;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(57, 255, 136, 0.4);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .game-container {
+            background: linear-gradient(135deg, rgba(57, 255, 136, 0.15), rgba(0, 201, 120, 0.1));
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .game-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(57, 255, 136, 0.4);
+            border-color: rgba(57, 255, 136, 0.6);
+        }
+
+        .game-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            background: rgba(26, 15, 0, 0.5);
+        }
+
+        .game-container:hover .game-logo {
+            transform: scale(1.05);
+            border-color: rgba(57, 255, 136, 0.7);
+        }
+
+        .game-name {
+            font-size: 14px;
+            margin: 10px 0 0;
+            color: var(--text-gold);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            transition: all 0.3s;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        .game-container:hover .game-name {
+            color: var(--diwali-orange);
+        }
+
+        /* Footer */
+        .customer-service {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            position: relative;
+        }
+
+        .customer-service::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(57, 255, 136, 0.5), transparent);
+        }
+
+        .info-text {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            font-family: 'Share Tech Mono', monospace;
+            background: rgba(26, 15, 0, 0.5);
+            padding: 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* Updated Recommended Games Text - More Attractive */
+        .recommended-text {
+            text-align: center;
+            font-size: 16px;
+            color: var(--diwali-gold);
+            margin: 25px auto 15px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1.5px;
+            max-width: 800px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(57, 255, 136, 0.2), rgba(0, 201, 120, 0.15));
+            border-radius: 12px;
+            border: 1px solid rgba(57, 255, 136, 0.4);
+            box-shadow: 0 6px 20px rgba(57, 255, 136, 0.3);
+            text-shadow: 0 0 10px rgba(57, 255, 136, 0.7);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .recommended-text::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(57, 255, 136, 0.2), transparent);
+            animation: textShine 4s infinite;
+        }
+
+        @keyframes textShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Gift Code Button */
+        .gift-code-btn-container {
+            text-align: center;
+            margin: 10px auto 20px;
+            position: relative;
+        }
+
+        .gift-code-tag {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5);
+            z-index: 2;
+        }
+
+        .btn-gift-code {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(57, 255, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #06130D;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .btn-gift-code:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(57, 255, 136, 0.5);
+        }
+
+        /* Image Slider */
+        .slider-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(57, 255, 136, 0.2);
+            aspect-ratio: 16/9;
+            border: 1px solid rgba(57, 255, 136, 0.3);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(57, 255, 136, 0.7));
+            color: #06130D;
+            font-weight: bold;
+        }
+
+        /* Terminal */
+        .terminal-line {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 12px;
+            color: var(--diwali-orange);
+            opacity: 0.7;
+            pointer-events: none;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* HOT Tag */
+        .hot-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5);
+            z-index: 2;
+            animation: hotPulse 2s infinite;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes hotPulse {
+            0% { transform: rotate(5deg) scale(1); box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5); }
+            50% { transform: rotate(5deg) scale(1.05); box-shadow: 0 3px 15px rgba(57, 255, 136, 0.7); }
+            100% { transform: rotate(5deg) scale(1); box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5); }
+        }
+
+        /* LAUNCHED Tag */
+        .launched-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.5);
+            z-index: 2;
+            animation: launchedPulse 2s infinite;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes launchedPulse {
+            0% { transform: rotate(5deg) scale(1); box-shadow: 0 3px 10px rgba(76, 175, 80, 0.5); }
+            50% { transform: rotate(5deg) scale(1.05); box-shadow: 0 3px 15px rgba(76, 175, 80, 0.7); }
+            100% { transform: rotate(5deg) scale(1); box-shadow: 0 3px 10px rgba(76, 175, 80, 0.5); }
+        }
+
+        /* Coming Soon Tag */
+        .coming-soon-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5);
+            z-index: 2;
+        }
+
+        /* Game Container Wrapper */
+        .game-container-wrapper {
+            position: relative;
+        }
+
+        /* Coming Soon Game Styles */
+        .game-container.coming-soon {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .game-container.coming-soon:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(57, 255, 136, 0.3);
+        }
+
+        .game-container.coming-soon:hover .game-logo {
+            transform: none;
+            border-color: rgba(57, 255, 136, 0.3);
+        }
+
+        .game-container.coming-soon:hover .game-name {
+            color: var(--text-gold);
+        }
+
+        /* Updated Telegram Button */
+        .telegram-btn-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .telegram-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(5deg);
+            box-shadow: 0 3px 10px rgba(57, 255, 136, 0.5);
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            padding: 15px 25px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(57, 255, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #06130D;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(57, 255, 136, 0.5);
+        }
+
+        .btn-telegram i {
+            font-size: 1.2rem;
+        }
+
+        /* Latest Version Banner */
+        .latest-version-banner {
+            background: linear-gradient(90deg, transparent, rgba(57, 255, 136, 0.2), transparent);
+            padding: 10px 0;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(57, 255, 136, 0.3);
+            border-bottom: 1px solid rgba(57, 255, 136, 0.3);
+            border-radius: 8px;
+        }
+
+        .latest-version-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            color: var(--diwali-orange);
+            white-space: nowrap;
+            animation: scrollText 25s linear infinite;
+            display: inline-block;
+            padding-left: 100%;
+            font-weight: 600;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Feature Highlights */
+        .feature-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 150px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: #06130D;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(57, 255, 136, 0.3);
+        }
+
+        .feature-text {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* 5-Star Rating Section */
+        .rating-section {
+            text-align: center;
+            margin: 40px auto 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(57, 255, 136, 0.15), rgba(0, 201, 120, 0.1));
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .rating-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--diwali-gold);
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(57, 255, 136, 0.5);
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .star {
+            color: var(--diwali-gold);
+            font-size: 24px;
+            text-shadow: 0 2px 5px rgba(57, 255, 136, 0.5);
+            animation: starPulse 3s infinite;
+        }
+
+        .star:nth-child(1) { animation-delay: 0s; }
+        .star:nth-child(2) { animation-delay: 0.3s; }
+        .star:nth-child(3) { animation-delay: 0.6s; }
+        .star:nth-child(4) { animation-delay: 0.9s; }
+        .star:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes starPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .rating-text {
+            font-size: 16px;
+            color: var(--text-gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        .rating-subtext {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0 auto;
+            text-shadow: 0 0 5px var(--diwali-yellow);
+        }
+
+        /* Diwali Greeting */
+        .diwali-greeting {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--diwali-gold), var(--diwali-orange));
+            color: #06130D;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 5px 15px rgba(57, 255, 136, 0.5);
+            z-index: 10;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .button-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.7rem;
+            }
+
+            .btn-whatsapp {
+                padding: 10px 15px;
+                font-size: 0.8rem;
+                max-width: 250px;
+            }
+
+            .hot-tag, .coming-soon-tag, .launched-tag {
+                font-size: 10px;
+                padding: 2px 8px;
+                top: -8px;
+                right: -8px;
+            }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-telegram {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                max-width: 280px;
+            }
+
+            .latest-version-text {
+                font-size: 11px;
+            }
+
+            .feature-highlights {
+                gap: 15px;
+            }
+
+            .feature {
+                max-width: 120px;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .feature-text {
+                font-size: 10px;
+            }
+
+            .rating-section {
+                padding: 20px 15px;
+                margin: 30px auto 15px;
+            }
+
+            .rating-title {
+                font-size: 16px;
+            }
+
+            .star {
+                font-size: 20px;
+            }
+
+            .rating-text {
+                font-size: 14px;
+            }
+
+            .rating-subtext {
+                font-size: 13px;
+            }
+
+            .recommended-text {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+        }
+
+        /* Button Animation */
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* NEON GREEN VISUAL UPGRADE */
+        body {
+            background:
+              radial-gradient(ellipse at 12% 8%, rgba(0, 201, 120, .13), transparent 38%),
+              radial-gradient(ellipse at 88% 55%, rgba(57, 255, 136, .08), transparent 42%),
+              #06130D;
+        }
+        .header, .game-container, .status-bar, .rating-section, .info-text {
+            border-color: rgba(57,255,136,.34);
+            box-shadow: 0 0 0 1px rgba(57,255,136,.04), 0 10px 30px rgba(0,0,0,.28), 0 0 22px rgba(0,201,120,.08);
+        }
+        .game-container {
+            background: linear-gradient(145deg, rgba(15,66,42,.72), rgba(5,24,16,.92));
+            animation: cardRise .65s both;
+        }
+        .game-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: inherit;
+            background: linear-gradient(115deg, transparent 20%, rgba(185,255,215,.07) 45%, transparent 68%);
+            transform: translateX(-130%);
+            animation: cardSweep 5.5s ease-in-out infinite;
+        }
+        .game-logo {
+            object-fit: contain;
+            padding: 3px;
+            background: linear-gradient(145deg, rgba(57,255,136,.12), rgba(0,0,0,.25));
+            box-shadow: 0 0 18px rgba(0,201,120,.14);
+        }
+        .game-container:hover .game-logo {
+            box-shadow: 0 0 22px rgba(57,255,136,.38);
+        }
+        .title, .game-name, .current-time, .btn, .btn-whatsapp, .btn-telegram, .btn-gift-code {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .subtitle, .feature-text, .info-text { letter-spacing: 1.1px; }
+        .feature-icon {
+            background: linear-gradient(135deg, #B9FFD7, #00C978 60%, #087A4C);
+            box-shadow: 0 0 22px rgba(0,201,120,.28);
+        }
+        .btn, .btn-whatsapp, .btn-telegram, .btn-gift-code {
+            background: linear-gradient(115deg, #B9FFD7 0%, #39FF88 35%, #00C978 72%, #087A4C 100%);
+            background-size: 180% 180%;
+            animation: buttonFlow 5s ease infinite;
+            box-shadow: 0 6px 22px rgba(0,201,120,.2);
+        }
+        .recommended-text {
+            background: linear-gradient(120deg, rgba(0,201,120,.2), rgba(57,255,136,.06), rgba(0,201,120,.18));
+            border-color: rgba(57,255,136,.38);
+        }
+        .latest-version-banner { border-color: rgba(57,255,136,.3); }
+        .status-indicator.online { box-shadow: 0 0 10px #39FF88; animation: dotBlink 1.8s infinite; }
+        .hot-tag, .launched-tag, .coming-soon-tag, .whatsapp-tag, .telegram-tag, .gift-code-tag {
+            filter: saturate(1.1);
+        }
+        @keyframes cardRise {
+            from { opacity: 0; transform: translateY(14px) scale(.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes cardSweep {
+            0%, 65% { transform: translateX(-130%); }
+            85%, 100% { transform: translateX(130%); }
+        }
+        @keyframes buttonFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes dotBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .45; }
+        }
+        .game-container-wrapper:nth-child(2) .game-container { animation-delay: .06s; }
+        .game-container-wrapper:nth-child(3) .game-container { animation-delay: .12s; }
+        .game-container-wrapper:nth-child(4) .game-container { animation-delay: .18s; }
+        .game-container-wrapper:nth-child(5) .game-container { animation-delay: .24s; }
+        .game-container-wrapper:nth-child(n+6) .game-container { animation-delay: .3s; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Simplified Diwali Background -->
+    <div class="diwali-bg"></div>
+
+    <div class="container">
+        <!-- Diwali Greeting -->
+        <div class="diwali-greeting">
+            🎇 Happy New Year! 🎇
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-items">
+                <div class="status-item">
+                    <div class="status-indicator online"></div>
+                    <span id="onlineUsers">Online users: 12,345</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-indicator syncing"></div>
+                    <span>Server: 🇮🇳 India</span>
+                </div>
+            </div>
+            <div class="current-time" id="currentTime">
+                <!-- Time will be inserted by JS -->
+            </div>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <div class="whatsapp-btn-container">
+            <span class="whatsapp-tag">IMPORTANT</span>
+            <button class="btn-whatsapp" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i>
+                JOIN WHATSAPP CHANNEL
+            </button>
+        </div>
+
+        <div class="header">
+            <p class="subtitle">>_ Free predictions for everyone</p>
+            
+            <!-- Latest Version Banner -->
+            <div class="latest-version-banner">
+                <div class="latest-version-text">
+                    🔥 WINNING PREDICTIONS • DAILY UPDATES • FREE ACCESS • JOIN NOW • PROFESSIONAL ANALYSIS • WIN BIG 🔥
+                </div>
+            </div>
+            
+            <!-- Feature Highlights -->
+            <div class="feature-highlights">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-text">Accurate Predictions</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text">Secure & Reliable</div>
+                </div>
+            </div>
+            
+            <div class="button-row">
+                <div class="telegram-btn-container">
+                    <span class="telegram-tag">FREE</span>
+                    <button class="btn-telegram" id="telegramBtn">
+                        <i class="fab fa-telegram"></i>
+                        JOIN OUR TELEGRAM
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-grid">
+            <div class="game-container-wrapper">
+                <span class="hot-tag">HOT 🔥</span>
+                <div class="game-container" data-href="raxigame.html" role="link" tabindex="0" aria-label="Open Raxi Game">
+                    <img src="raxigame.png" alt="Raxi Game" class="game-logo" loading="lazy">
+                    <div class="game-name">Raxi Game</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">HOT 🔥</span>
+                <div class="game-container" data-href="maanwin.html" role="link" tabindex="0" aria-label="Open Maan Win">
+                    <img src="maanwin.png" alt="Maan Win" class="game-logo" loading="lazy">
+                    <div class="game-name">Maan Win</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">HOT 🔥</span>
+                <div class="game-container" data-href="jalwa.html" role="link" tabindex="0" aria-label="Open Jalwa">
+                    <img src="jalwa.png" alt="Jalwa" class="game-logo" loading="lazy">
+                    <div class="game-name">Jalwa</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">NEW ✦</span>
+                <div class="game-container" data-href="Jaiclub.html" role="link" tabindex="0" aria-label="Open Jai Club">
+                    <img src="Jaiclub.png" alt="Jai Club" class="game-logo" loading="lazy">
+                    <div class="game-name">Jai Club</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">NEW ✦</span>
+                <div class="game-container" data-href="sikkim.html" role="link" tabindex="0" aria-label="Open Sikkim">
+                    <img src="sikkim.png" alt="Sikkim" class="game-logo" loading="lazy">
+                    <div class="game-name">Sikkim</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">NEW ✦</span>
+                <div class="game-container" data-href="VeerGame.html" role="link" tabindex="0" aria-label="Open Veer Game">
+                    <img src="VeerGame.png" alt="Veer Game" class="game-logo" loading="lazy">
+                    <div class="game-name">Veer Game</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">PLAY NOW</span>
+                <div class="game-container" data-href="shreewin.html" role="link" tabindex="0" aria-label="Open Shree Win">
+                    <img src="shreewin.png" alt="Shree Win" class="game-logo" loading="lazy">
+                    <div class="game-name">Shree Win</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">PLAY NOW</span>
+                <div class="game-container" data-href="tashan.html" role="link" tabindex="0" aria-label="Open Tashan">
+                    <img src="tashan.png" alt="Tashan" class="game-logo" loading="lazy">
+                    <div class="game-name">Tashan</div>
+                </div>
+            </div>
+            <div class="game-container-wrapper">
+                <span class="hot-tag">PLAY NOW</span>
+                <div class="game-container" data-href="yaarwin.html" role="link" tabindex="0" aria-label="Open Yaar Win">
+                    <img src="yaarwin.png" alt="Yaar Win" class="game-logo" loading="lazy">
+                    <div class="game-name">Yaar Win</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Updated Recommended Games Text - More Attractive -->
+        <div class="recommended-text">
+            🎯 EXPLORE GAMES: RAXI • MAANWIN • JALWA • JAICLUB • SIKKIM • VEER • SHREEWIN • TASHAN • YAARWIN 🎯
+        </div>
+        
+        <!-- Gift Code Button -->
+        <div class="gift-code-btn-container">
+            <span class="gift-code-tag">Free</span>
+            <button class="btn-gift-code" id="giftCodeBtn">
+                <i class="fas fa-fire"></i>
+                Free Gift Codes
+            </button>
+        </div>
+
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <a href="javascript:void(0)" onclick="openInBrowser('../../external.html?link=https://t.me/team_hackersz')">
+                        <img src="telegram.png" alt="Telegram">
+                    </a>
+                </div>
+                <div class="slide">
+                    <img src="win.png" alt="Win">
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)" onclick="openInBrowser('../../external.html?link=https://t.me/teamhackersz_bot')">
+                        <img src="support.png" alt="Support">
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)" onclick="openInBrowser('../../external.html?link=https://t.me/team_hackersz')">
+                        <img src="aviator%20(2).png" alt="Aviator png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Customer Service -->
+        <div class="customer-service">
+            <div class="info-text">THIS SYSTEM GIVES YOU FREE PREDICTIONS FOR ALL THE GAMES ABOVE, AND WE ALWAYS PROVIDE YOU FREE HACKS AND BETTER PREDICTIONS SO JOIN OUR TELEGRAM FOR MORE MODS : @Team_Hackersz</div>
+            <button class="btn btn-accent" id="customerServiceBtn">
+                <i class="fas fa-headset"></i>
+                CUSTOMER SUPPORT
+            </button>
+        </div>
+
+        <!-- 5-Star Rating Section -->
+        <div class="rating-section">
+            <div class="rating-title">USER REVIEWS</div>
+            <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+            </div>
+            <div class="rating-text">This hack is really the best, safe and secure!</div>
+            <div class="rating-subtext">Thousands of users trust our prediction system for accurate results and complete security. Join our community today!</div>
+        </div>
+    </div>
+
+    <div class="terminal-line">>_ SYSTEM_READY_FOR_PREDICTION</div>
+
+    <script>
+        // Function to open URL in external browser
+        function openInBrowser(url) {
+            // This will be handled by Android WebView's shouldOverrideUrlLoading
+            window.open(url, '_system');
+        }
+
+        // Image Slider Functionality
+        function setupSlider() {
+            const slider = document.getElementById('slider');
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let autoSlideInterval;
+            
+            // Set initial position
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            // Auto slide
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlider();
+                }, 5000);
+            }
+            
+            // Manual slide controls
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Touch events for swipe
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const threshold = 50;
+                if (touchEndX < touchStartX - threshold) {
+                    nextSlide();
+                } else if (touchEndX > touchStartX + threshold) {
+                    prevSlide();
+                }
+            }
+            
+            // Mouse events for desktop
+            let mouseDownX = 0;
+            let mouseUpX = 0;
+            
+            slider.addEventListener('mousedown', (e) => {
+                mouseDownX = e.clientX;
+            });
+            
+            slider.addEventListener('mouseup', (e) => {
+                mouseUpX = e.clientX;
+                const threshold = 50;
+                if (mouseUpX < mouseDownX - threshold) {
+                    nextSlide();
+                } else if (mouseUpX > mouseDownX + threshold) {
+                    prevSlide();
+                }
+            });
+            
+            // Start auto sliding
+            startAutoSlide();
+        }
+        
+        // Update current time
+        function updateCurrentTime() {
+            const now = new Date();
+            const options = { 
+                timeZone: 'Asia/Kolkata', 
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+            const timeString = now.toLocaleTimeString('en-IN', options);
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        
+        // Update online users count
+        function updateOnlineUsers() {
+            const onlineUsersElement = document.getElementById('onlineUsers');
+            const minUsers = 12000;
+            const maxUsers = 15000;
+            
+            // Generate random number between min and max
+            const randomUsers = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+            
+            // Format number with commas
+            const formattedUsers = randomUsers.toLocaleString();
+            
+            onlineUsersElement.textContent = `Online users: ${formattedUsers}`;
+        }
+        
+        // Game container click handlers
+        function setupGameContainers() {
+            const gameContainers = document.querySelectorAll('.game-container:not(.coming-soon)');
+            
+            gameContainers.forEach(container => {
+                container.addEventListener('click', () => {
+                    const href = container.getAttribute('data-href');
+                    if (href) {
+                        // Open in external browser
+                        openInBrowser(href);
+                    }
+                });
+            });
+            
+            // Add scroll to top functionality for coming soon games
+            const comingSoonContainers = document.querySelectorAll('.game-container.coming-soon');
+            
+            comingSoonContainers.forEach(container => {
+                container.addEventListener('click', () => {
+                    // Smooth scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Add a visual feedback effect
+                    container.style.transform = 'scale(0.95)';
+                    container.style.backgroundColor = 'rgba(57, 255, 136, 0.2)';
+                    
+                    setTimeout(() => {
+                        container.style.transform = '';
+                        container.style.backgroundColor = '';
+                    }, 300);
+                });
+            });
+        }
+        
+        // Button click handlers
+        function setupButtonHandlers() {
+            // WhatsApp button
+            document.getElementById('whatsappBtn').addEventListener('click', () => {
+                openInBrowser('../../external.html?link=https://t.me/TradeHelper1');
+            });
+            
+            // Telegram button
+            document.getElementById('telegramBtn').addEventListener('click', () => {
+                openInBrowser('../../external.html?link=https://t.me/team_hackersz');
+            });
+            
+            // Gift code button
+            document.getElementById('giftCodeBtn').addEventListener('click', () => {
+                openInBrowser('../../external.html?link=https://t.me/TradeHelper1');
+            });
+            
+            // Customer service button
+            document.getElementById('customerServiceBtn').addEventListener('click', () => {
+                openInBrowser('../../external.html?link=https://t.me/teamhackersz_bot');
+            });
+        }
+
+        // Initialize everything when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setupSlider();
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 1000);
+            updateOnlineUsers();
+            setInterval(updateOnlineUsers, 2000); // Update every 2 seconds
+            setupGameContainers();
+            setupButtonHandlers();
+        });
+    </script>
+<!-- Cloudflare Pages Analytics --><script defer src='../static.cloudflareinsights.com/beacon.min.html' data-cf-beacon='{"token": "786ef7333701443985205d7238c95241"}'></script><!-- Cloudflare Pages Analytics --></body>
+
+<!-- Mirrored from cortexpanels.site/Elite/ by HTTrack Website Copier/3.x [XR&CO'2017], Tue, 06 Jan 2026 20:44:49 GMT -->
+
+<!-- Mirrored from elite12345ywywywy.github.io/newyear26/ by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 15 Oct 2026 07:35:21 GMT -->
+</html>
+
+
